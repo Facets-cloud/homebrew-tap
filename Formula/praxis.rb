@@ -11,19 +11,29 @@ class Praxis < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/Facets-cloud/praxis-cli/releases/download/v0.0.1/praxis_darwin_amd64"
-      sha256 "b3b8f53ae9faf0dac3d7c348b9abb4dda473e2b280c74c03789a954a5d35025a"
+      sha256 "9ae7f89693ab1667323fee15f1293871ac9b388f802df193e3e27ab789e3d8dc"
 
       define_method(:install) do
-        bin.install Dir["*"].first => "praxis"
+        # Raw-binary assets shipped via GitHub Releases arrive with mode
+        # 0644 (GitHub strips the executable bit on upload). chmod before
+        # the test-step or install call tries to exec the binary.
+        binary = Dir["*"].find { |f| File.file?(f) }
+        File.chmod(0755, binary)
+        bin.install binary => "praxis"
         generate_completions_from_executable(bin/"praxis", "completion")
       end
     end
     if Hardware::CPU.arm?
       url "https://github.com/Facets-cloud/praxis-cli/releases/download/v0.0.1/praxis_darwin_arm64"
-      sha256 "2432d659b9cdd28cf77fdb9f8cb27d193db1ac389641f41b945c0bff600947a1"
+      sha256 "a819ee02931fdb5d8cddc1f7cee233f6c423d41140e4d333c9417b0972ece66d"
 
       define_method(:install) do
-        bin.install Dir["*"].first => "praxis"
+        # Raw-binary assets shipped via GitHub Releases arrive with mode
+        # 0644 (GitHub strips the executable bit on upload). chmod before
+        # the test-step or install call tries to exec the binary.
+        binary = Dir["*"].find { |f| File.file?(f) }
+        File.chmod(0755, binary)
+        bin.install binary => "praxis"
         generate_completions_from_executable(bin/"praxis", "completion")
       end
     end
@@ -32,17 +42,27 @@ class Praxis < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/Facets-cloud/praxis-cli/releases/download/v0.0.1/praxis_linux_amd64"
-      sha256 "a675989fd16868d44e6e48091c02a934f65c1aacf4d71bbc61e342040f3f06a5"
+      sha256 "97cd17d86defe4c8a06b1b57d43cd136dbfd522d0272e6e237d6c86a5702c358"
       define_method(:install) do
-        bin.install Dir["*"].first => "praxis"
+        # Raw-binary assets shipped via GitHub Releases arrive with mode
+        # 0644 (GitHub strips the executable bit on upload). chmod before
+        # the test-step or install call tries to exec the binary.
+        binary = Dir["*"].find { |f| File.file?(f) }
+        File.chmod(0755, binary)
+        bin.install binary => "praxis"
         generate_completions_from_executable(bin/"praxis", "completion")
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/Facets-cloud/praxis-cli/releases/download/v0.0.1/praxis_linux_arm64"
-      sha256 "4cfbf5ddf917ebce9ca7019e48501dad621241c472320ebc2c0e2565ea9d63ea"
+      sha256 "1bbd84eeca774d190f3817eef3efaa5384ee97639b0b0a2848f46f8b3b2f57db"
       define_method(:install) do
-        bin.install Dir["*"].first => "praxis"
+        # Raw-binary assets shipped via GitHub Releases arrive with mode
+        # 0644 (GitHub strips the executable bit on upload). chmod before
+        # the test-step or install call tries to exec the binary.
+        binary = Dir["*"].find { |f| File.file?(f) }
+        File.chmod(0755, binary)
+        bin.install binary => "praxis"
         generate_completions_from_executable(bin/"praxis", "completion")
       end
     end
