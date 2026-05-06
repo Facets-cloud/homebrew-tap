@@ -5,13 +5,13 @@
 class Praxis < Formula
   desc "Bring Praxis cloud capabilities to any local AI host"
   homepage "https://askpraxis.ai"
-  version "0.0.2"
+  version "0.1.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Facets-cloud/praxis-cli/releases/download/v0.0.2/praxis_darwin_amd64"
-      sha256 "24cdb9d17d11e2fb7070fc1c09543d6be8b32f029a944492e6d5422791414bb0"
+      url "https://github.com/Facets-cloud/praxis-cli/releases/download/v0.1.0/praxis_darwin_amd64"
+      sha256 "6584ee92fed5ac2f8dc4dc9c64d86ebfae92519406430cf85e6e111565770729"
 
       define_method(:install) do
         # Raw-binary assets shipped via GitHub Releases arrive with mode
@@ -24,8 +24,8 @@ class Praxis < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Facets-cloud/praxis-cli/releases/download/v0.0.2/praxis_darwin_arm64"
-      sha256 "ccfb5ae64b15d3807811082fa3c23218fb4fa191fa6c5476d96836f5767b7681"
+      url "https://github.com/Facets-cloud/praxis-cli/releases/download/v0.1.0/praxis_darwin_arm64"
+      sha256 "e62f2e0eba2c8ab0afd75c623618ba2cccaf07eef6fb1b16293f87409ed2ad72"
 
       define_method(:install) do
         # Raw-binary assets shipped via GitHub Releases arrive with mode
@@ -41,8 +41,8 @@ class Praxis < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Facets-cloud/praxis-cli/releases/download/v0.0.2/praxis_linux_amd64"
-      sha256 "2b03b231316961cef743b8b54402c2e29d37e69e6610279a5ed5b8c68bc538c6"
+      url "https://github.com/Facets-cloud/praxis-cli/releases/download/v0.1.0/praxis_linux_amd64"
+      sha256 "45b6c0814c3afc6b075c4affc5cf1979a6a8715cefe945dd5e9be57e147cdf97"
       define_method(:install) do
         # Raw-binary assets shipped via GitHub Releases arrive with mode
         # 0644 (GitHub strips the executable bit on upload). chmod before
@@ -54,8 +54,8 @@ class Praxis < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Facets-cloud/praxis-cli/releases/download/v0.0.2/praxis_linux_arm64"
-      sha256 "925a1d9e26d4b2386b00f36f06a3a014ec4ad40a2505a4d0b3faf0acce6b86bf"
+      url "https://github.com/Facets-cloud/praxis-cli/releases/download/v0.1.0/praxis_linux_arm64"
+      sha256 "b97789f79b1c0315baf237d2af0e45bc3cf9ee0947fdf1e05400c4245699bc90"
       define_method(:install) do
         # Raw-binary assets shipped via GitHub Releases arrive with mode
         # 0644 (GitHub strips the executable bit on upload). chmod before
