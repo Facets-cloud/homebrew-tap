@@ -6,28 +6,28 @@ cask "praxis" do
     end
   end
 
-  version "2.7.0"
+  version "2.8.0"
 
   on_macos do
     on_arm do
-      sha256 "3dc53540e019f7a56f7898a43c7761d2aecbee719e51056e4bed32aeb83d84a5"
+      sha256 "ebeb7e2c7264c2e488f55fda614cb7e19fccf4e6426cfc8dc3af182a1c4bcdd3"
       url "https://github.com/Facets-cloud/praxis-cli/releases/download/v#{version}/praxis_darwin_arm64"
       binary "praxis_darwin_arm64", target: "praxis"
     end
     on_intel do
-      sha256 "74581e33e326f23238a3dbc61f8dcf32a16033555c1054c4930392bdd195c0d9"
+      sha256 "ec1b20fcdbcd74d634ed2d466ffe9e95c881239b07bee499a1c55c5277a4c5aa"
       url "https://github.com/Facets-cloud/praxis-cli/releases/download/v#{version}/praxis_darwin_amd64"
       binary "praxis_darwin_amd64", target: "praxis"
     end
   end
   on_linux do
     on_arm do
-      sha256 "066da23a12122f58ac5ded1331d697bc33c4bed3023e56b00c623ad5aadb89d1"
+      sha256 "4ebdc11baaa429bf0a8704020f2bb1bdd1129180f110d5c807591387a4ad9a81"
       url "https://github.com/Facets-cloud/praxis-cli/releases/download/v#{version}/praxis_linux_arm64"
       binary "praxis_linux_arm64", target: "praxis"
     end
     on_intel do
-      sha256 "5817800e50c158afb57be629c9c1cefc5650eab3a6df90ab1aa9df7f75bffb3f"
+      sha256 "e49097200406f320784042f11b7bbae5cbe470e61918b41c542347c3f57530bf"
       url "https://github.com/Facets-cloud/praxis-cli/releases/download/v#{version}/praxis_linux_amd64"
       binary "praxis_linux_amd64", target: "praxis"
     end
@@ -41,5 +41,5 @@ cask "praxis" do
     skip "Auto-generated on release."
   end
 
-  # No zap stanza required
+  zap :not_required
 end
